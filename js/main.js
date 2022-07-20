@@ -71,11 +71,13 @@ function loadAllData(data,result,exitTime){
     tdata6.className="text-center";
     i = i + 1;
     tdata1.innerHTML=`${i}`;
-    tdata2.innerHTML= new Date(`${data.ts.S}`).toLocaleString();
+    const updatedTime = new Date(`${data.ts.S}`).getTime() + 19800000;
+    tdata2.innerHTML= `${new Date(updatedTime).toLocaleString()}`;
     tdata3.innerHTML=`${data.RFID.S}`;
     tdata4.innerHTML=`${data.REC.N}`;
     tdata5.innerHTML=`${result}`;
-    tdata6.innerHTML=new Date(`${exitTime}`).toLocaleString();
+    const updatedExitTime= new Date(`${exitTime}`).getTime() + 19800000;
+    tdata6.innerHTML=`${new Date(updatedExitTime).toLocaleString()}`;
     trow.appendChild(tdata1);
     trow.appendChild(tdata3);
     trow.appendChild(tdata5);
